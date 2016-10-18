@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <title>Angular QuickStart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app/angularjs_module.js"></script>
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src="systemjs.config.js"></script>
+
+    <script>
+      // Get the locale id somehow
+      document.locale = 'fr';
+
+      // Map to the text plugin
+      System.config({
+        map: {
+          text: 'systemjs-text-plugin.js'
+        }
+      });
+      // console.log 
+      console.log(document.locale);
+      // Launch the app
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+
+  </head>
+
+  <body>
+    <h1 ng-controller="MyController">
+      This is {{angularVersion}}!
+    </h1>
+    <my-app>Loading...</my-app>
+    <mock-component></mock-component>
+    <div [innerHTML]="'HELLO' | translate"></div>
+  </body>
+</html>

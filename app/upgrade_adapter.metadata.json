@@ -1,0 +1,1 @@
+{"__symbolic":"module","version":1,"metadata":{"upgradeAdapter":{"__symbolic":"new","expression":{"__symbolic":"reference","module":"@angular/upgrade","name":"UpgradeAdapter"},"arguments":[{"__symbolic":"reference","module":"./app.module","name":"AppModule"}]}}}
